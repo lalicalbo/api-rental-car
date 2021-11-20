@@ -1,0 +1,27 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "final project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon serverjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lalicalbo/final-proyect-rental-cars.git"
+  },
+  "author": "Laura Calderon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lalicalbo/final-proyect-rental-cars/issues"
+  },
+  "homepage": "https://github.com/lalicalbo/final-proyect-rental-cars#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^6.0.12",
+    "nodemon": "^2.0.14",
+    "pug": "^3.0.2"
+  }
+}
