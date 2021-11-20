@@ -2,7 +2,7 @@ console.log("********API CAR**********");
 
 import express from "express";
 
-import { router, routerQuotation, routerUsers} from "./routes/index.js";
+import { router, routerQuotation, routerUsers,routerBooks} from "./routes/index.js";
 console.log("SERVER WORKING")
 
 //creating app
@@ -18,8 +18,9 @@ app.get("/", (req, res) => {
 app.use("/api/car", router);
 app.use("/api/rental", routerQuotation);
 app.use("/api/user", routerUsers);
+app.use("/api/booking", routerBooks);
 
-const PORT = process.env.PORT || 5000
+const PORT = process.env.PORT || 3007
 //lauch server
 app.listen(PORT, () => {
     console.log("inizializing server")

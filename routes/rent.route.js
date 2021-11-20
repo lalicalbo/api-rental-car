@@ -4,7 +4,6 @@ import { rentCtrl } from "../controllers/index.js";
 
 const routerQuotation=express.Router();
 
-
 const rentRoutes={
     RENT:"",
     QUOTE:"/quote",

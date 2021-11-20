@@ -6,7 +6,8 @@ const schema = {
     puertas:Number,
     puestos:Number,
     maletas:Number,
-    precio:Number
+    precio:Number,
+    
 };
 
 const Car = mongoose.model("Car", schema);
