@@ -15,9 +15,9 @@ app.get("/", (req, res) => {
 
 });
 
-app.use("/api", router);
-app.use("/home", routerQuotation);
-app.use("/use", routerUsers);
+app.use("/api/car", router);
+app.use("/api/rental", routerQuotation);
+app.use("/api/user", routerUsers);
 
 const PORT = process.env.PORT || 5000
 //lauch server

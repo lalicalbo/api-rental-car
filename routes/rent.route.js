@@ -6,12 +6,12 @@ const routerQuotation=express.Router();
 
 
 const rentRoutes={
-    HOME:"/home",
-    RENT:"/quotation",
+    RENT:"",
+    QUOTE:"/quote",
 };
 
 
-routerQuotation.post(rentRoutes.RENT, rentCtrl.quotation);
+routerQuotation.post(rentRoutes.QUOTE, rentCtrl.quotation);
 
 
 export default routerQuotation;
