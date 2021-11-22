@@ -5,10 +5,10 @@ import days_number from "../utils/date.js";
 
 export const quotation = (req, res) => {
     console.log("BODY", req.body)
-    const { id, initial_date, end_date } = req.body
+    const { id_car, initial_date, end_date } = req.body
 
     dataBase.connect();
-    Car.findById(id, (err, data) => {
+    Car.findById(id_car, (err, data) => {
         console.log("DATAAAAA", data)
         const { precio } = data
         if (err) res.status(400).send(err);
