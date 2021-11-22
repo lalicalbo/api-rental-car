@@ -7,6 +7,7 @@ export const getAllCars = (req, res) => {
     dataBase.connect();
     Car.find((err, data) => {
         if (err) res.status(500).send(err);
+        res.setHeader("access-control-allow-origin","*")
         res.status(200).send(data);
 
     })
