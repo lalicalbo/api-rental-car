@@ -7,7 +7,6 @@ export const getAllCars = (req, res) => {
     dataBase.connect();
     Car.find((err, data) => {
         if (err) res.status(500).send(err);
-        res.setHeader("access-control-allow-origin","*")
         res.status(200).send(data);
 
     })
@@ -20,7 +19,6 @@ export const getOneCar = (req, res) => {
 
     Car.findById(id, (err, data) => {
         if (err) res.status(404).send(err);
-        res.setHeader("access-control-allow-origin","*")
         res.status(200).json(data);
         if(data){
             console.log("data",data)
@@ -37,7 +35,6 @@ export const createOneCar = (req, res) => {
     if (req.body) {
         Car.create(req.body, (err, car) => {
             if (err) res.status(500).send(err);
-            res.setHeader("access-control-allow-origin","*")
             res.status(201).json(car);
         });
     };
@@ -53,7 +50,6 @@ export const updateCar = (req, res) => {
         if (err) res.status(500).send(err);
         Car.updateOne(car, carToUpdate, (err, carUpdated) => {
             if (err) res.status(500).send();
-            res.setHeader("access-control-allow-origin","*")
             res.status(200).send(carUpdated);
         });
     });
@@ -69,7 +65,6 @@ export const deleteCar = (req, res) => {
         if (err) res.status(404).send(err);
         car.remove((err, value) => {
             if (err) res.status(500).send(err);
-            res.setHeader("access-control-allow-origin","*")
             res.send(value);
 
         });

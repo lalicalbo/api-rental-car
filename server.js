@@ -1,6 +1,7 @@
 console.log("********API CAR**********");
 
 import express from "express";
+import cors from "cors";
 
 import { router, routerQuotation, routerUsers,routerBooks} from "./routes/index.js";
 console.log("SERVER WORKING")
@@ -9,6 +10,7 @@ console.log("SERVER WORKING")
 const app = express();
 
 app.use(express.json());
+app.use(cors());
 
 app.get("/", (req, res) => {
     res.send("Main page BUGGY Y BUMPER,INC")
