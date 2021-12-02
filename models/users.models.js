@@ -4,6 +4,7 @@ const schema = {
     email: String,
     nombre: String,
     telefono: Number,
+    password:String,
     id:Number
 }
 

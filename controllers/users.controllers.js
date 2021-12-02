@@ -65,3 +65,26 @@ export const deleteUser =(req,res)=>{
          });
     });
 };
+
+
+export const validateUser = (req, res) =>{
+    console.log("works validateAuth ")
+    const {email , password }=req.body;
+
+    if(email === undefined || password === undefined){
+        res.status(401).send()
+    } else{
+        dataBase.connect();
+        const query = User.findOne({'email':email});
+
+        query.exec(function (err, user) {
+            if (err) res.status(500).send(err)
+            if(user === null) res.status(401).send();
+            if(user.password === password) res.status(200).send();
+            res.status(401).send();
+        
+        })
+
+    }  
+
+}
