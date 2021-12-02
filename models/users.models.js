@@ -6,7 +6,7 @@ const schema = {
     telefono: Number,
     password:String,
     id:Number
-}
+};
 
 const User = mongoose.model("User", schema);
 

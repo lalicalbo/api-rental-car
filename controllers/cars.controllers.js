@@ -1,4 +1,3 @@
-import mongoose from "mongoose";
 import dataBase from "../dataBase.js";
 import { Car } from "../models/index.js";
 
@@ -8,8 +7,7 @@ export const getAllCars = (req, res) => {
     Car.find((err, data) => {
         if (err) res.status(500).send(err);
         res.status(200).send(data);
-
-    })
+    });
 };
 
 
@@ -20,17 +18,14 @@ export const getOneCar = (req, res) => {
     Car.findById(id, (err, data) => {
         if (err) res.status(404).send(err);
         res.status(200).json(data);
-        if(data){
-            console.log("data",data)
-        }
-
+        if (data) {
+            console.log("data", data)
+        };
     });
 };
 
 
 export const createOneCar = (req, res) => {
-    console.log("it works...")
-    console.log("BODY", req.body)
     dataBase.connect();
     if (req.body) {
         Car.create(req.body, (err, car) => {
@@ -40,8 +35,8 @@ export const createOneCar = (req, res) => {
     };
 };
 
+
 export const updateCar = (req, res) => {
-    console.log("works put")
     const { id } = req.params
     const carToUpdate = req.body
 
@@ -57,7 +52,6 @@ export const updateCar = (req, res) => {
 
 
 export const deleteCar = (req, res) => {
-    console.log("it woks delete")
     const { id } = req.params;
 
     dataBase.connect();

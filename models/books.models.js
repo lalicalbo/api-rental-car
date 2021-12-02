@@ -7,8 +7,7 @@ const schema = {
     telefono: Number,
     initial_date:String,
     end_date:String,
-    days:Number
-    
+    days:Number   
 };
 
 const Books = mongoose.model("Books", schema);
